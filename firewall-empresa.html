@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="es">
+        <meta author="Edu Nievas">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="icon" type="image/x-icon" href="./img/letra-e.png">
+        <title>Portafolio Digital Edu Nievas Dris</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <img id="imagen" src="./img/NASA_Edu.png">
+            <h1 class="encabezado"><a id="encabezado-inicio" href="./index.html">Portafolio </br>Digital</a></h1>
+            <ul class="nav-links">
+                <li class="enlaces"><a id="links-encabezado" href="index.html">Inicio</a></li>
+                <li class="enlaces"><a id="links-encabezado" href="presentacion.html">Presentación</a></li>
+                <li class="enlaces"><a id="links-encabezado" href="proyectos.html">Proyectos Realizados <span class="flecha"></span></a>
+                    <ul>
+                        <li class="proyectos-submenu"><a class="subrayado" href="./creacion-portafolio.html">Creación Portafolio Digital</a></li>
+                        <li class="proyectos-submenu"><a class="subrayado" href="./acogida-digital.html">Acogida Digital</a></li>
+                        <li class="proyectos-submenu"><a class="subrayado" href="./maquina-arcade.html">Máquina Arcade</a></li>
+                        <li class="proyectos-submenu"><a class="subrayado" href="./tienda-online.html">Tienda online</a></li>
+                        <li class="proyectos-submenu"><a class="subrayado" href="./red-empresa.html">Infraestructura informática Empresa</a></li>
+                        <li class="proyectos-submenu"><a class="subrayado" href="./firewall-empresa.html">Hardening de la Empresa</a></li>
+                    </ul>
+                </li>
+                <li class="enlaces"><a id="links-encabezado" href="cvc.html">Currículum Vitae Competencial</a></li>
+                <li class="enlaces"><a id="links-encabezado" href="ipop.html">Informe Personal de Orientación Profesional<span class="flecha"></span></a>
+                    <ul>
+                        <li class="ipop-submenu"><a class="subrayado" href="./ipop/ipop-uno.pdf">Ipop Uno</a></li>
+                        <li class="ipop-submenu"><a class="subrayado" href="./ipop/ipop-dos.pdf">Ipop Dos</a></li>
+                        <li class="ipop-submenu"><a class="subrayado" href="./ipop/ipop-tres.pdf">Ipop Tres</a></li>
+                        <li class="ipop-submenu"><a class="subrayado" href="./ipop/ipop-cuatro.pdf">Ipop Cuatro</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="edicion-vimo">
+            <h1 class="edicion-vitut">Making of Hardening de la Empresa:</h1>
+            <p id="texto-edicion-vi">Aquí se explica el proceso a seguir para la configuración del hardening de nuestra empresa:</p>
+            <p id="texto-edicion-vi">La configuración del hardening se dividió en cuatro apartados distintos, siendo los siguientes:</p>
+            <ul>
+                <a class="enlace-creacionp" href="#01"><li id="texto-edicion-vi">01 - Control de Red</li></a>
+                <a class="enlace-creacionp" href="#02"><li id="texto-edicion-vi">02 - Migración de Wordpress</li></a>
+                <a class="enlace-creacionp" href="#03"><li id="texto-edicion-vi">03 - Gestión de Documentos</li></a>
+                <a class="enlace-creacionp" href="#04"><li id="texto-edicion-vi">04 - Configuración de Backups y Hardening</li></a>
+                <a class="enlace-creacionp" href="#05"><li id="texto-edicion-vi">05 - Documento Final</li></a>
+                <a class="enlace-creacionp" href="#06"><li id="texto-edicion-vi">06 - Presentación</li></a>
+            </ul>
+            <h1 id="01"  class="edicion-vitut">01 - Control de Red</h1>
+            <p id="texto-edicion-vi">Se instaló el SO de Firewall basado en linux IPFire en el que se configuró una DMZ dónde se podrán alojar servicios de nuestra red de forma segura a los que se podrá acceder desde internet (Una página web en este caso). Con este SO también se configuraron tres tipos diferentes de filtraje con el proxy. Esto hará que la IP de nuestro GTW de nuestra LAN cambie a la IP del firewall siendo esta la 192.168.1.5</p>
+            <img class="firewall-imagen" src="./img/ipfire.png">
+            <iframe class="manual-infraestructura" src="https://docs.google.com/document/d/e/2PACX-1vQC_b0HMv5G2bHBI-hjNQa52-xUwJYtATRO0d8MpOAVVm0WdeWoZ_OxQABVfglKM40prErg8Ct0DW0H/pub?embedded=true"></iframe>
+
+            <h1 id="02"  class="edicion-vitut">02 - Migración de Wordpress</h1>
+            <p id="texto-edicion-vi">Utilizando el plugin <a class="enlace-creacionp" target="_blank" href="https://github.com/shameemreza/all-in-one-wp-migration">All in one wordpress migration</a> se exportarán todos los archivos de la web, acto seguido se instalará en la DMZ un Ubuntu server LTS 20.04 en el que se instalará apache2 como servidor web, también se instalará mysql para la gestión de la base de datos. Se hará toda la configuración del servidor apache y se instalará un wordpress nuevo, una vez instalado el nuevo wordpress se hará la importación del que se exportó anteriormente, esto se hará utilizando el mismo plugin de la exportación. Una vez se importe el wordpress antiguo simplemente se deberá configurar el DNS de la red dónde se agregará el dominio del web.</p>
+            <p id="texto-edicion-vi">La instalación se realizó en la DMZ de la red para que desde internet se tenga acceso a la web alojada en la DMZ pero no a la LAN, esto dará un nivel de seguridad extra a la LAN.</p>
+            <img class="firewall-imagen" src="./img/bd-web.png">
+            <iframe class="manual-infraestructura" src="https://docs.google.com/document/d/e/2PACX-1vSJQAiuWrJaYgE2jXxlGsyYzK9GZs_thpV4Y79fPWEMxfsJsZd-A9ciVTU4v2ng9zwkyleoemokszHK/pub?embedded=true"></iframe>
+
+            <h1 id="03"  class="edicion-vitut">03 - Gestión de Documentos</h1>
+            <p id="texto-edicion-vi">Instalación y configuración de un SO de NAS basado en Linux, se instaló OpenMediaVault qué incluirá una interfaz web para la gestión NAS. Se creará un RAID 10 porque combina velocidad y protección de datos. Ofrece un rendimiento más rápido al escribir y leer datos, y tiene alta tolerancia a fallos. Además, permite más capacidad de almacenamiento y es fácil de ampliar. Se creó una carpeta compartida y se configuraron los permisos de acceso a los usuarios de LDAP.</p>
+            <iframe class="manual-infraestructura" src="https://docs.google.com/document/d/e/2PACX-1vSupIzmiKyAyNB3uX5_o3Kzi4CJ4M28C81BtYyt5TA0zOBqe9OYxb4QZy6sCV6zrFWAUWCk_QDY8tow/pub?embedded=true"></iframe>
+
+            <h1 id="04"  class="edicion-vitut">04 - Configuración de Backups y Hardening</h1>
+            <p id="texto-edicion-vi">Se configuraron copias de seguridad automáticas tanto para nuestra web como para los usuarios de LDAP. Se podrá configurar con crontab una copia de seguridad mensual automática pero que también se podrá ejecutar manualmente. Esta copia se guardará dentro de una carpeta compartida en el NAS. Para las copias de seguridad de wordpress se utilizará el plugin UpDraftPlus que se configurará para hacer dos copias de seguridad mensuales tanto de archivos como de base de datos mediante FTP, en esta también se podrá forzar una copia de seguridad manual cuando se desee. Por último se configurarán unos requisitos mínimos de seguridad para las contraseñas mediante LDAP.</p>
+            <iframe class="manual-infraestructura" src="https://docs.google.com/document/d/e/2PACX-1vTBMwzpxzRS7d7JMwn9dZlCj1cUGl-RG6LQ7tLFaB1KtUKPVnfvI_FceQCvyxQpXDjh-Ww4gwhZjmOR/pub?embedded=true"></iframe>
+
+            <h1 id="05"  class="edicion-vitut">05 - Documento Final</h1>
+            <iframe class="manual-infraestructura" src="https://docs.google.com/document/d/e/2PACX-1vQscMEq8lChHb1DHe_jJDrk-dReqLWrnm7yF7ikQXaDR-BTLPLPEXNJSK05NY-kZy7OcjjL4UMWHPN9/pub?embedded=true"></iframe>
+            <div class="descarga">
+                <a id="descarga-default" href="./src/P6_DOC_SMXC_Grup1_Nievas_Edu_Hidalgo_David_Ferreira_Yeison.pdf"><img class="download" src="./img/download.png">
+                <p class="texto-descarga">Descargar</p></a>
+            </div>
+            <h1 id="06"  class="edicion-vitut">06 - Presentación</h1>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRXPROxTpGaCfCn3RbtbvfZhts2OLgDabBHkWU6qvqP-Ur2k9XsYXtcZlQwHXyjjtJr-SE8UWHyo3ML/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <div class="descarga">
+                <a id="descarga-default" href="./src/"><img class="download" src="./img/download.png">
+                <p class="texto-descarga">Descargar</p></a>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/145/145802.png">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
+    </footer>
+</html>
